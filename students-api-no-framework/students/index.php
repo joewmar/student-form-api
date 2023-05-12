@@ -68,13 +68,13 @@
         $db->closeConnection($connect);
         $response =
         [
-            "Message" => "Record Added Successful",
+            "message" => "Student of " . $value['firstname'] . " ". $value['lastname'] . " was Added",
         ];
         echo json_encode($response);
     }
 
     if($method == "PUT"){
-        $message = null;
+        $response = null;
         $sql = null;
 
         $data = urldecode(file_get_contents('php://input'));
@@ -91,6 +91,11 @@
             $email = $value['email'];   
             $phone_no =  $value['phoneno'];  
             $sql = "UPDATE tblstudents SET firstname = '$first_name', lastname = '$last_name', birthday = '$birthday', address = '$address', course = '$course', year = '$year', email = '$email', phoneno = '$phone_no' WHERE id = " . $_GET['id'];
+            $response =
+            [
+                "message" => "Student of " . $value['firstname'] . " ". $value['lastname'] . " was Updated",
+            ];
+            echo json_encode($response);
         }
         else{
             die("Error ID");
@@ -112,7 +117,7 @@
     }
 
     if($method == "DELETE"){
-        $message = null;
+        $response = null;
         $sql = null;
 
         $data = urldecode(file_get_contents('php://input'));
@@ -132,13 +137,18 @@
         //Execute Query
         
         if (mysqli_query($connect, $sql)) {
-            $message = "Record Delete Successful";
+            $response =
+            [
+                "message" => "Student of " . $value['firstname'] . " ". $value['lastname'] . " was Deleted",
+            ];
         } 
         else {
             $message = "Error Updating record";
         }
+
+        echo json_encode($response);
         $db->closeConnection($connect);
-        echo json_encode($message);      
+        echo json_encode($response);      
     }
 
 
