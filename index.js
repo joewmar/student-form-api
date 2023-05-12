@@ -30,10 +30,10 @@ $(document).ready(function() {
                     <td>${item.address}</td>
                     <td>${item.course}</td>
                     <td>${item.year}</td>
+                    <td>${item.email}</td>
                     <td>${item.phoneno}</td>
-                    <td>09456789123</td>
                     <td>
-                        <button type="button" class="btn btn-outline-dark btn-sm">More Details</button>
+                        <a href="student.html?id=${item.id}" class="btn btn-outline-dark btn-sm">More Details</a>
                     </td>
                 </tr>
                 
@@ -65,7 +65,8 @@ function addRecord(){
             method: "POST", 
             data: JSON.stringify(data),
             success: function(response) {
-                alert(`Student of ${document.getElementById("firstname").value} was Added`);
+                alert(`Student of ${document.getElementById("lastname").value} was Added`);
+                window.location.reload();
             },
             error: function(xhr, status, error) {
                 var err = eval("(" + xhr.responseText + ")");                    

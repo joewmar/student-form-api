@@ -16,6 +16,14 @@
                     <h4 class="mb-3">More Detials</h4>
                     <form method="POST" class="needs-validation" novalidate="">
                       <div class="row g-3">
+
+                        <div class="col-12">
+                          <label for="studid" class="form-label">Student ID</label>
+                          <input type="text" class="form-control w-25" id="studid" readonly>
+                          <div class="invalid-feedback">
+                          </div>
+                        </div>
+
                         <div class="col-sm-6">
                           <label for="firstname" class="form-label">First Name</label>
                           <input type="text" class="form-control" id="firstname" required>
@@ -92,13 +100,13 @@
                             Please enter a valid email.
                           </div>
                         </div>
-            
+                        <hr class="mt-4">
+
+                        <div class="d-flex justify-content-end mb-4">
+                            <button class="w-25 btn btn-success" onclick="updateRecord()">Update</button>
+                            <button class="w-25 btn btn-danger mx-3" type="submit" onclick="deleteRecord()">Delete</button>
+                          </div>
                       </div>
-                
-                      <hr class="my-4">
-            
-                      <button class="w-25 btn btn-success btn-md my-5 float-end" type="submit" onclick="">Update</button>
-                      <button class="w-25 btn btn-error btn-md my-5 float-end" type="submit" onclick="">Delete</button>
                     </form>
                   </div>
                 </div>
@@ -116,6 +124,6 @@
             <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" integrity="sha512-6DC1eE3AWg1bgitkoaRM1lhY98PxbMIbhgYCGV107aZlyzzvaWCW1nJW2vDuYQm06hXrW0As6OGKcIaAVWnHJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-wOLiP6uL5tNrV1FiutKtAyQGGJ1CWAsqQ6Kp2XZ12/CvZxw8MvNJfdhh0yTwjPIir4SWag2/MHrseR7PRmNtvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
             <script src="js/form-validation.js"></script>
-            <script src="index.js"></script>
+            <script src="student.js"></script>
   </body>
 </html>
