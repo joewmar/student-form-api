@@ -1,0 +1,121 @@
+<!Doctype HTML>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Student Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/fontawesome.min.css" integrity="sha512-SgaqKKxJDQ/tAUAAXzvxZz33rmn7leYDYfBP+YoMRSENhf3zJyx3SBASt/OfeQwBHA1nxMis7mM3EV/oYT6Fdw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light" data-new-gr-c-s-check-loaded="14.1108.0" data-gr-ext-installed="">
+            <div class="container">
+              <main>
+                <div class="row g-5 border border-primary m-5 d-flex justify-content-center">
+                  <div class="col-md-7 col-lg-8">
+                    <h4 class="mb-3">More Detials</h4>
+                    <form method="POST" class="needs-validation" novalidate="">
+                      <div class="row g-3">
+                        <div class="col-sm-6">
+                          <label for="firstname" class="form-label">First Name</label>
+                          <input type="text" class="form-control" id="firstname" required>
+                          <div class="invalid-feedback">
+                            Valid First Name is required.
+                          </div>
+                        </div>
+            
+                        <div class="col-sm-6">
+                          <label for="lastname" class="form-label">Last Name</label>
+                          <input type="text" class="form-control" id="lastname" placeholder="" value="" required>
+                          <div class="invalid-feedback">
+                            Valid Last Name is required.
+                          </div>
+                        </div>
+            
+                        <div class="col-12">
+                          <label for="birthday" class="form-label">Birthday</label>
+                          <input type="date" class="form-control" placeholder="YYYY-MM-DD" id="birthday" required>
+                          <div class="invalid-feedback">
+                            Valid Birthday is required.
+                          </div>
+                        </div>
+            
+                        <div class="col-12">
+                          <label for="address" class="form-label">Address</label>
+                          <input type="text" class="form-control" id="address" required>
+                          <div class="invalid-feedback">
+                            Please enter your address.
+                          </div>
+                        </div>
+            
+                        <div class="col-12">
+                          <label for="course" class="form-label">Course</label>
+                          <select id="course" class="form-select" aria-label="Default" required>
+                            <option value="" selected disabled>Select Course</option>
+                            <option value="BSBA">BSBA</option>
+                            <option value="BSED">BSED</option>
+                            <option value="BSTM">BSTM</option>
+                            <option value="BSIT">BSIT</option>
+                            <option value="BSHM">BSHM</option>
+                            <option value="BSA">BSA</option>
+                            <option value="BSBA">BSBA</option>
+                            <option value="BSCRIM">BSCRIM</option>
+                            <option value="BEED">BEED</option>
+                            <option value="PolSci">PolSci</option>
+                          </select>
+                          <div class="invalid-feedback">
+                            Please select a valid course.
+                          </div>
+                        </div>
+            
+                        <div class="col-md-6">
+                          <label for="year" class="form-label">Year Level</label>
+                          <input type="number" class="form-control" name="year" id="year" min="1" value="1" max="4" >
+                          <div class="invalid-feedback">
+                            Please select a valid year level.
+                          </div>
+                        </div>
+            
+                        <div class="col-md-6">
+                          <label for="email" class="form-label">Email</label>
+                          <input type="email" class="form-control" name="email" id="email" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid email.
+                          </div>
+                        </div>
+            
+                      </div>
+                        <div class="col-12">
+                          <label for="phoneno" class="form-label">Phone Number</label>
+                          <input type="text" class="form-control" name="phoneno" id="phoneno" required>
+                          <div class="invalid-feedback">
+                            Please enter a valid email.
+                          </div>
+                        </div>
+            
+                      </div>
+                
+                      <hr class="my-4">
+            
+                      <button class="w-25 btn btn-success btn-md my-5 float-end" type="submit" onclick="">Update</button>
+                      <button class="w-25 btn btn-error btn-md my-5 float-end" type="submit" onclick="">Delete</button>
+                    </form>
+                  </div>
+                </div>
+              </main>
+        
+              <footer class="my-5 pt-5 text-muted text-center text-small">
+                <p class="mb-1">© 2017–2023 Dominican College of Tarlac</p>
+                <ul class="list-inline">
+                  <li class="list-inline-item"><a href="#">Privacy</a></li>
+                  <li class="list-inline-item"><a href="#">Terms</a></li>
+                  <li class="list-inline-item"><a href="#">Support</a></li>
+                </ul>
+              </footer>
+            </div>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.js" integrity="sha512-6DC1eE3AWg1bgitkoaRM1lhY98PxbMIbhgYCGV107aZlyzzvaWCW1nJW2vDuYQm06hXrW0As6OGKcIaAVWnHJw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.3/js/bootstrap.min.js" integrity="sha512-wOLiP6uL5tNrV1FiutKtAyQGGJ1CWAsqQ6Kp2XZ12/CvZxw8MvNJfdhh0yTwjPIir4SWag2/MHrseR7PRmNtvA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            <script src="js/form-validation.js"></script>
+            <script src="index.js"></script>
+  </body>
+</html>
