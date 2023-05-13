@@ -1,5 +1,5 @@
-<!Doctype HTML>
-<html lang="en">
+<!DOCTYPE html>
+  <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -15,7 +15,7 @@
                   <div class="col-md-7 col-lg-8">
                     <a href="/" class="mb-3 btn btn-primary">&lt; Back</a>
                     <h4 class="mb-3">More Detials</h4>
-                    <form method="POST" class="needs-validation" novalidate="">
+                    <form method="get" class="needs-validation" novalidate="">
                       <div class="row g-3">
                         <div class="col-12">
                           <label for="studid" class="form-label">Student ID</label>
@@ -103,7 +103,7 @@
                         <hr class="mt-4">
 
                         <div class="d-flex justify-content-end mb-4">
-                            <button class="w-25 btn btn-success" onclick="updateRecord()">Update</button>
+                            <button class="w-25 btn btn-success" type="submit" onclick="updateRecord()">Update</button>
                             <button class="w-25 btn btn-danger mx-3" type="submit" onclick="deleteRecord()">Delete</button>
                           </div>
                       </div>

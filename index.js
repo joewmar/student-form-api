@@ -13,8 +13,9 @@ function formatDate(date) {
 }
 $(document).ready(function() {
     $.ajax({
-        url: "http://students-api-no-framework.test/students/",
+        url: "http://localhost/students-api-php/students/",
         method: "GET", 
+        contentType: "application/json; charset=utf-8",
         success: function(response) {
             txt = "";
             for(var item of response){
@@ -59,11 +60,12 @@ function addRecord(){
     }
     $(document).ready(function() {
         $.ajax({
-            url: "http://students-api-no-framework.test/students/",
+            url: "http://localhost/students-api-php/students/",
             method: "POST", 
+            
             data: JSON.stringify(data),
             success: function(response) {
-                if (window.confirm(`Student of ${document.getElementById("lastname").value} was Added`))
+                if (alert(`Student of ${document.getElementById("lastname").value} was Added`))
                 {
                     window.location.assign("/");
                 }

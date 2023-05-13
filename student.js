@@ -19,8 +19,9 @@ const id = params.get("id"); // is the number of id like 1 and so on
 // GET one record
 $(document).ready(function() {
     $.ajax({
-        url: `http://students-api-no-framework.test/students/index.php?id=${id}`,
+        url: `http://localhost/students-api-php/students/index.php?id=${id}`,
         method: "GET", 
+        contentType: "application/json; charset=utf-8",
         success: function(response) {
             document.getElementById("studid").value = response[0].id;
             document.getElementById("firstname").value = response[0].firstname;
@@ -52,14 +53,13 @@ function updateRecord(){
         phoneno : document.getElementById("phoneno").value,
     }
     $.ajax({
-        url: `http://students-api-no-framework.test/students/index.php?id=${id}`,
+        url: `http://localhost/students-api-php/students/index.php?id=${id}`,
         method: "PUT",
+        contentType: "application/json; charset=utf-8",
         data: JSON.stringify(data),
         success: function(response) {
-            if (window.confirm(`Student of ${document.getElementById("lastname").value} was Updated`))
-            {
-                window.location.assign("/");
-            }
+            window.location.assign("/");
+            
         },
         error: function(xhr, status, error) {
             var err = eval("(" + xhr.responseText + ")");                    
@@ -73,13 +73,12 @@ function deleteRecord(){
     const id = document.getElementById("studid").value;
     $(document).ready(function() {
         $.ajax({
-            url: `http://students-api-no-framework.test/students/index.php?id=${id}`,
+            url: `http://localhost/students-api-php/students/index.php?id=${id}`,
             method: "DELETE", 
+            contentType: "application/json; charset=utf-8",
             success: function(response) {
-                if (window.confirm(`Student of ${document.getElementById("lastname").value} was Deleted`))
-                {
-                    window.location.assign("/");
-                }
+                window.location.assign("/");
+                
             },
             error: function(xhr, status, error) {
                 var err = eval("(" + xhr.responseText + ")");                    
