@@ -56,7 +56,10 @@ function updateRecord(){
         method: "PUT",
         data: JSON.stringify(data),
         success: function(response) {
-            window.location.assign("/");
+            if (window.confirm(`Student of ${document.getElementById("lastname").value} was Updated`))
+            {
+                window.location.assign("/");
+            }
         },
         error: function(xhr, status, error) {
             var err = eval("(" + xhr.responseText + ")");                    
@@ -73,7 +76,10 @@ function deleteRecord(){
             url: `http://students-api-no-framework.test/students/index.php?id=${id}`,
             method: "DELETE", 
             success: function(response) {
-                window.location.assign("/");
+                if (window.confirm(`Student of ${document.getElementById("lastname").value} was Deleted`))
+                {
+                    window.location.assign("/");
+                }
             },
             error: function(xhr, status, error) {
                 var err = eval("(" + xhr.responseText + ")");                    

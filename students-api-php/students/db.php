@@ -4,8 +4,8 @@
         //Properties
         private $host = 'localhost';
         private $user = 'root';
-        private $password = 'myadmin123';
-        private $dbname = 'school-db';
+        private $password = '';
+        private $dbname = 'school';
 
         //Connections
         public function connect(){

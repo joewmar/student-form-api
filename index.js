@@ -11,8 +11,6 @@ function formatDate(date) {
 
     return [year, month, day].join('-');
 }
-
-
 $(document).ready(function() {
     $.ajax({
         url: "http://students-api-no-framework.test/students/",
@@ -65,8 +63,10 @@ function addRecord(){
             method: "POST", 
             data: JSON.stringify(data),
             success: function(response) {
-                alert(`Student of ${document.getElementById("lastname").value} was Added`);
-                window.location.reload();
+                if (window.confirm(`Student of ${document.getElementById("lastname").value} was Added`))
+                {
+                    window.location.assign("/");
+                }
             },
             error: function(xhr, status, error) {
                 var err = eval("(" + xhr.responseText + ")");                    
