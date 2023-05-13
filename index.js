@@ -11,41 +11,41 @@ function formatDate(date) {
 
     return [year, month, day].join('-');
 }
-$(document).ready(function() {
-    $.ajax({
-        url: "http://localhost/students-api-php/students/",
-        method: "GET", 
-        contentType: "application/json; charset=utf-8",
-        success: function(response) {
-            txt = "";
-            for(var item of response){
-                txt += 
-                `
-                <tr>
-                    <th scope="row">${item.id}</th>
-                    <td>${item.firstname}</td>
-                    <td>${item.lastname}</td>
-                    <td>${item.birthday}</td>
-                    <td>${item.address}</td>
-                    <td>${item.course}</td>
-                    <td>${item.year}</td>
-                    <td>${item.email}</td>
-                    <td>${item.phoneno}</td>
-                    <td>
-                        <a href="student.html?id=${item.id}" class="btn btn-outline-dark btn-sm">More Details</a>
-                    </td>
-                </tr>
-                
-                `;
-                document.getElementById("api").innerHTML = txt;
+function getAllRecord(){
+        $.ajax({
+            url: "http://localhost/students-api-php/students/",
+            method: "GET", 
+            contentType: "application/json; charset=utf-8",
+            success: function(response) {
+                txt = "";
+                for(var item of response){
+                    txt += 
+                    `
+                    <tr>
+                        <th scope="row">${item.id}</th>
+                        <td>${item.firstname}</td>
+                        <td>${item.lastname}</td>
+                        <td>${item.birthday}</td>
+                        <td>${item.address}</td>
+                        <td>${item.course}</td>
+                        <td>${item.year}</td>
+                        <td>${item.email}</td>
+                        <td>${item.phoneno}</td>
+                        <td>
+                            <a href="student.html?id=${item.id}" class="btn btn-outline-dark btn-sm">More Details</a>
+                        </td>
+                    </tr>
+                    
+                    `;
+                    document.getElementById("api").innerHTML = txt;
+                }
+            },
+            error: function(xhr, status, error) {
+                var err = eval("(" + xhr.responseText + ")");                    
+                alert(err.Message);
             }
-        },
-        error: function(xhr, status, error) {
-            var err = eval("(" + xhr.responseText + ")");                    
-            alert(err.Message);
-        }
-    })
-});
+        });
+}
 
 function addRecord(){
     var data = {
@@ -65,10 +65,7 @@ function addRecord(){
             
             data: JSON.stringify(data),
             success: function(response) {
-                if (alert(`Student of ${document.getElementById("lastname").value} was Added`))
-                {
-                    window.location.assign("/");
-                }
+                getAllRecord()
             },
             error: function(xhr, status, error) {
                 var err = eval("(" + xhr.responseText + ")");                    
@@ -77,4 +74,6 @@ function addRecord(){
         })
     });
 }
-
+$(document).ready(function() {
+    getAllRecord();
+});
